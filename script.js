@@ -23,7 +23,7 @@ async function main() {
     skewedString = skewText(captchaString)
     drawCaptcha(myCanvas, skewedString)
     setInterval(() => {
-        updateCaptcha(myCanvas)
+        updateCaptcha(myCanvas, obj)
         submitButton.disabled = "true"
     }, 5000)
 }
@@ -38,8 +38,8 @@ function verifyCaptcha(captchaInput, button) {
 
 }
 
-function updateCaptcha(myCanvas) {
-    myCanvas.getContext("2d")   .drawImage(obj.img, obj.x, obj.y)
+function updateCaptcha(myCanvas, obj) {
+    myCanvas.getContext("2d").drawImage(obj.img, obj.x, obj.y)
 
     const i = Math.floor(Math.random() * captchaString.length)
     captchaString = setCharAt(captchaString, i, randomCharacters()[0])
