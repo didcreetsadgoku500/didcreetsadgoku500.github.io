@@ -103,7 +103,7 @@ function izzzNoise(w, h) {
             img.onload = () => {
                 const x = (Math.random() * (img.width - w) * -1) 
                 const y = (Math.random() * (img.height - h) * -1) 
-                resolve({"img": img, "x": x, "y":y})}
+                res({"img": img, "x": x, "y":y})}
 
         })
 
