@@ -14,6 +14,8 @@ async function main() {
     submitButton.disabled = true
     captchaInput.addEventListener("input", () => {verifyCaptcha(captchaInput, submitButton)})
     obj = await izzzNoise(myCanvas.width, myCanvas.height)
+    console.log("initial obj:")
+    console.log(obj)
 
     const ctx = canvas.getContext("2d");obj = 
     ctx.drawImage(obj.img, obj.x, obj.y)
