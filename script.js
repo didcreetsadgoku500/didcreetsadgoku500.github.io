@@ -7,8 +7,7 @@ let obj
 const fontSize = 55
 
 async function main() {
-    const fontLoader = new FontFace("Architects Daughter", "https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap")
-    await fontLoader.load()
+
     const myCanvas = document.getElementById("canvas")
     const submitButton = document.querySelector("#submit")
     const captchaInput = document.querySelector("#captchaInput")
