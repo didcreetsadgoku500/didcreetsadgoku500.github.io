@@ -100,9 +100,10 @@ function izzzNoise(w, h) {
         return new Promise((res, rej) => {
             img = new Image
             img.src = 'https://pbs.twimg.com/media/Ffd22lOXwAEDxid.jpg'
-            x = (Math.random() * (img.width - w) * -1) 
-            y = (Math.random() * (img.height - h) * -1) 
-            img.onload = () => res({"img": img, "x": x, "y":y})
+            img.onload = () => {
+                const x = (Math.random() * (img.width - w) * -1) 
+                const y = (Math.random() * (img.height - h) * -1) 
+                resolve({"img": img, "x": x, "y":y})}
 
         })
 
