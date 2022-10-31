@@ -102,7 +102,7 @@ function izzzNoise(w, h) {
             img.src = 'https://pbs.twimg.com/media/Ffd22lOXwAEDxid.jpg'
             x = (Math.random() * (img.width - w) * -1) 
             y = (Math.random() * (img.height - h) * -1) 
-            img.onload = () => resolve({"img": img, "x": x, "y":y})
+            img.onload = () => res({"img": img, "x": x, "y":y})
 
         })
 
