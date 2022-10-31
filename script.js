@@ -1,16 +1,10 @@
 
-window.addEventListener("load", preload)
+window.addEventListener("load", main)
 
 let captchaString = randomCharacters(5)
 let skewedString
 let obj
 const fontSize = 55
-let p = 1
-
-function preload() {
-    p += 1
-    if (p>1) {main()}
-}
 
 function main() {
 
