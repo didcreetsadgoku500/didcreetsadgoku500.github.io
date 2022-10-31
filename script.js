@@ -5,7 +5,7 @@ let captchaString = randomCharacters(5)
 let skewedString
 let obj
 const fontSize = 55
-let p = 0
+let p = 1
 
 function preload() {
     p += 1
