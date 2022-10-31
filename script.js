@@ -1,10 +1,16 @@
 
-window.addEventListener("load", main)
+window.addEventListener("load", preload)
 
 let captchaString = randomCharacters(5)
 let skewedString
 let obj = izzzNoise(myCanvas.width, myCanvas.height)
 const fontSize = 55
+let p = 0
+
+function preload() {
+    p += 1
+    if (p>1) {main()}
+}
 
 function main() {
 
@@ -99,6 +105,7 @@ function drawCaptcha(myCanvas, captchaString) {
 function izzzNoise(w, h) {
         img = new Image
         img.src = 'https://pbs.twimg.com/media/Ffd22lOXwAEDxid.jpg'
+        img.addEventListener("load", preload)
         x = (Math.random() * (img.width - w) * -1) 
         y = (Math.random() * (img.height - h) * -1) 
         return {"img": img, "x": x, "y":y}
