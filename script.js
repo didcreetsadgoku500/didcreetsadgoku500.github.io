@@ -99,7 +99,7 @@ function drawCaptcha(myCanvas, captchaString) {
 
 function izzzNoise(w, h) {
         img = new Image
-        img.src = 'czkalier.jpg'
+        img.src = 'https://pbs.twimg.com/media/Ffd22lOXwAEDxid.jpg'
         x = (Math.random() * (img.width - w) * -1) 
         y = (Math.random() * (img.height - h) * -1) 
         return {"img": img, "x": x, "y":y}
