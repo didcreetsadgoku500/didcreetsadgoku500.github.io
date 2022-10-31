@@ -86,7 +86,7 @@ function drawCaptcha(myCanvas, captchaString) {
         const yPos = ((myCanvas.height + fontSize) / 2) + (char.yOffset * (0.5 * fontSize))
 
         ctx.setTransform(1, char.ySkew, char.xSkew, 1, xPos, yPos);
-        ctx.font = fontSize + "px architects"
+        ctx.font = fontSize + "px Architects Daughter"
         ctx.fillStyle = "#000000"
         ctx.fillText(char.char, 0, 0)
         ctx.resetTransform()
