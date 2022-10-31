@@ -22,11 +22,16 @@ async function main() {
     skewedString = skewText(captchaString)
     drawCaptcha(myCanvas, skewedString)
     setInterval(() => {
-        console.log("interval obj:")
-        console.log(obj)
-        updateCaptcha(myCanvas, obj)
-        submitButton.disabled = "true"
+        interval(obj, myCanvas, submitButton)
     }, 5000)
+}
+
+function interval(obj, myCanvas, submitButton) {
+    console.log("interval obj:")
+    console.log(obj)
+    updateCaptcha(myCanvas, obj)
+    submitButton.disabled = "true"
+
 }
 
 function verifyCaptcha(captchaInput, button) {
