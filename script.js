@@ -13,6 +13,8 @@ async function main() {
     const captchaInput = document.querySelector("#captchaInput")
     submitButton.disabled = true
     captchaInput.addEventListener("input", () => {verifyCaptcha(captchaInput, submitButton)})
+    submitButton.addEventListener("click", () => alert("Congragulations! You solved the captcha!"))
+
     obj = await izzzNoise(myCanvas.width, myCanvas.height)
 
     const ctx = canvas.getContext("2d");
@@ -121,3 +123,14 @@ function setCharAt(str,index,chr) {
 //func to set up canvas initially
 //func to create captcha image from string, then push to canvas
 //func to generate new strings
+
+function whatIsThis() {
+    o = "This project was created for the Halloween 2022 \"Big Ooo Notation\" contest at CNU. The goal of the contest was to create the scariest project possible, by showing off poor code practices and unintuitive design choices. \n"
+    o += "\nIn this project, the captcha image changes slightly every couple of seconds. It also uses a font that's totally (not) unreadable for robots (and is definitely readable for humans!) \n"
+    o += "\nWhen you solve the captcha the \"Continue\" button will light up blue and become clickable. Try your best to solve it!"
+    o += "\nAnd whatever you do, do NOT open your browser's console and type console.log(captchaString)"
+    o += "\n;)\n\n\n"
+    o += "Captcha background art from @czkalier on Twitter \n"
+    o += "CSS modified from user @stack-findover on CodePen.io"
+    alert(o)
+}

@@ -184,7 +184,7 @@
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px;
   }
   
-  input[type="submit"] {
+  input[type="button"] {
       background-color: rgb(84, 105, 212);
       box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                   rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
@@ -197,7 +197,7 @@
       font-weight: 600;
       cursor: pointer;
   }
-  input[type="submit"]:disabled {
+  input[type="button"]:disabled {
     background-color: rgb(139, 139, 139);
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
                 rgba(0, 0, 0, 0) 0px 0px 0px 0px, 
