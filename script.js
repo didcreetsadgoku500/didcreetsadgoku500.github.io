@@ -132,5 +132,6 @@ function whatIsThis() {
     o += "\n;)\n\n\n"
     o += "Captcha background art from @czkalier on Twitter \n"
     o += "CSS modified from user @stack-findover on CodePen.io"
+    o+= "\n\n(No login information is actually sent or recorded anywhere once you click the button)"
     alert(o)
 }
