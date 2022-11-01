@@ -13,7 +13,7 @@ async function main() {
     const captchaInput = document.querySelector("#captchaInput")
     submitButton.disabled = true
     captchaInput.addEventListener("input", () => {verifyCaptcha(captchaInput, submitButton)})
-    submitButton.addEventListener("click", () => alert("Congragulations! You solved the captcha!"))
+    submitButton.addEventListener("click", () => alert("Congratulations! You solved the captcha! 🥳"))
 
     obj = await izzzNoise(myCanvas.width, myCanvas.height)
 
