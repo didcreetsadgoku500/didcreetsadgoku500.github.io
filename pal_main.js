@@ -116,9 +116,11 @@ function downloadFile(content, fileName) {
 
 
  function palDL() {
-    let stringBody = `product: BR
-units: dBZ
-step: 5
+    let stringBody = `Product: ${products[currentProduct].Product}
+Units: ${products[currentProduct].Units}
+Step: 5
+Scale: ${products[currentProduct].Scale || "1"}
+Offset: ${products[currentProduct].Offset || "0"}
 
 `
     let table = document.getElementById("table")
@@ -244,4 +246,21 @@ function dragover(){
     e.target.parentNode.after(row);
   else
     e.target.parentNode.before(row);
+}
+
+let products = {
+    "br1": {"Product":"BR", "Units": "dBZ"},
+    "2mt1": {"Product": "2MT", "Units": "°F", "Scale": "1.8", "Offset": "32"},
+    "2mt2": {"Product": "2MT", "Units": "°C"},
+    "srv1": {"Product": "SRV", "Units": "m/s"},
+    "srv2": {"Product": "SRV", "Units": "MPH", "Scale": "2.23694"},
+    "cape1": {"Product": "CAPE", "Units": "J/kg"}
+}
+
+let currentProduct = "br1"
+
+function updateUnits(m) {
+    currentProduct = m
+    document.getElementById("unitLabel").innerText = products[currentProduct].Units
+
 }

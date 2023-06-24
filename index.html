@@ -1,91 +1,73 @@
-<html>
-<head>
-  <meta charset="utf-8">
-  
-    <meta content="captcha game" property="og:title" />
-    <meta content="Site Description" property="og:description" />
-    <meta content="https://embed.com/this-is-the-site-url" property="og:url" />
-    <meta content="http://lemmmy.pw/osusig/sig.php?colour=pink&uname=Lemmmy" property="og:image" />
-    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
-  
-  <title>Register</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="./script.js"></script>
-
-<style>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./pal_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto&display=swap" rel="stylesheet"> 
+    <script src="draggable.js"></script>
+    <script src="pal_main.js"></script>
+    <title>pallete picker</title>
+  </head>
+  <body onload="loader()">
+    <div class="vertical-padding"></div>
+    <div class="content">
         
-        
-        @font-face {
-            font-family: "architects";
-            src: url(architects.ttf) format("truetype");
-            }
+        <h1>Kron's Palette Generator</h1>
 
-            
-</style>
-</head>
+        <div id="optionsBar">
 
-<body>
-  <div style="font-family: Architects Daughter;"></div>  
-  <div class="login-root">
-    <div class="box-root flex-flex flex-direction--column" style="min-height: 100vh;flex-grow: 1;">
-      <div class="loginbackground box-background--white padding-top--64">
-        <div class="loginbackground-gridContainer">
-          <div class="box-root flex-flex" style="grid-area: top / start / 8 / end;">
-            <div class="box-root" style="background-image: linear-gradient(white 0%, rgb(247, 250, 252) 33%); flex-grow: 1;">
-            </div>
-          </div>
-          
+            Product
+            <div style="padding: 0px 2px;"></div>
+
+            <select id="productSelector" oninput="updateUnits(this.value)">
+              <option value="br1">BR - dBZ</option>
+            <option value="2mt1">2MT - degrees F</option>
+            <option value="2mt2">2MT - degrees C</option>
+            <option value="srv1">SRV - m/s</option>
+            <option value="srv2">SRV - mph</option>
+            <option value="cape1">CAPE - J/kg</option>
+
+          </select>
+            <div style="padding: 0px 50px;"></div>
+
+            <button class="addRmv" onclick="addRow()"> + </button>
+            <button class="addRmv" onclick="removeRow()"> - </button>
+
         </div>
-      </div>
-      <div class="box-root flex-flex flex-direction--column" style="flex-grow: 1; z-index: 9;">
-        <div class="box-root padding-top--24 padding-bottom--15 flex-flex flex-justifyContent--center">
-          <h1>ACM @ CNU</h1>
+
+        <table>
+            <tbody id="table" >
+            <tr>
+                <th id="unitLabel">dBZ</th>
+                <th>R</th>
+                <th>G</th>
+                <th>B</th>
+                <th>A</th>
+                <th>Preview</th>
+            </tr>
+            <!-- draggable="true" ondragstart="start()" ondragover="dragover()" -->
+            </tbody>
+        </table>
+
+        <div style="display: flex; padding: 8px;">
+           
+            <!-- <button class="padme" onclick="loadPalette()">Upload .pal or .wspal</button> -->
+            <div>Upload <input type="file" id="fileUpload" accept=".pal,.wspal" oninput="handleFileUpload(this.files[0])"/></div>
+            <button class="padme" onclick="palDL()">Download .pal</button>
+            <button class="padme" onclick="wspalDL()">Download .wspal</button>
         </div>
-        <div class="formbg-outer">
-          <div class="formbg">
-            <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Create a new account</span>
-              <form id="stripe-login">
-                <div class="field padding-bottom--24">
-                  <label for="email">Email</label>
-                  <input type="email" name="email">
-                </div>
-                <div class="field padding-bottom--24">
-                  <div class="grid--50-50">
-                    <label for="password">Password</label>
-                  </div>
-                  <input type="password" name="password">
-                </div>
+        <div style="display: flex; padding: 8px;">
+           
+          Product <select id="productSelector">
+            <option value="2mt1">2MT - degrees F</option>
+            <option value="2mt2">2MT - degrees C</option>
+            <option value="srv1">SRV - m/s</option>
+            <option value="srv2">SRV - mph</option>
+            <option value="cape1">CAPE - J/kg</option>
 
-                <div class="field padding-bottom--24">
-                    <label for="captchaInput">Security Text</label>
-
-                    <div id="captchaDiv" class="captcha field">
-                        <canvas id="canvas"></canvas>
-                        <div class="captchaInput">
-                            <input type="password" name="captchaInput" id="captchaInput">
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="field field-checkbox padding-bottom--15 flex-flex align-center">
-
-                </div>
-                <div class="field padding-bottom--15">
-                  <input id="submit" type="button" name="submit" value="Continue">
-                </div>
-                
-              </form>
-            </div>
-          </div>
-          <div class="footer-link padding-top--12">
-            <span><a href="javascript:;" onclick="whatIsThis()">What is this?</a></span>
-          </div>
-        </div>
+          </select>
       </div>
     </div>
-  </div>
-</body>
-
+  </body>
 </html>
