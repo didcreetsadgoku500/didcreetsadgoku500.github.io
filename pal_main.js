@@ -1,6 +1,9 @@
 
 function rowConstructor(dv=0, rv = 0, gv = 0, bv = 0, av = 255) {
     var r = document.createElement("tr")
+    r.draggable = true;
+    r.addEventListener("dragstart", () => {start()});
+    r.addEventListener("dragover", () => {dragover()});
     let red = tdHelperRGB()
     let green = tdHelperRGB()
     let blue = tdHelperRGB()
@@ -222,4 +225,23 @@ function wspalHandler(n) {
 function pushRow(n) {
     console.log(n)
 
+}
+
+
+
+var row;
+
+function start(){  
+  row = event.target; 
+}
+function dragover(){
+  var e = event;
+  e.preventDefault(); 
+  
+  let children= Array.from(e.target.parentNode.parentNode.children);
+  
+  if(children.indexOf(e.target.parentNode)>children.indexOf(row))
+    e.target.parentNode.after(row);
+  else
+    e.target.parentNode.before(row);
 }
