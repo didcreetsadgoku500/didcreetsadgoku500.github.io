@@ -207,7 +207,7 @@ function palHandler(n) {
 }
 function wspalHandler(n) {
     let lines = n.replace(/(?:\r\n|\r)+/g, "\n")
-    lines = n.split("\n")
+    lines = lines.split("\n")
 
     for (let i = 0; i < lines.length; i++) {
         lines[i] = lines[i].split("|")
