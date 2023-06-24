@@ -1,0 +1,58 @@
+.vertical-padding {
+    width:max-content;
+    height:4rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+body {
+
+    background-color: #181818;
+    color:#e5e5e5;
+    font-family: 'Roboto', sans-serif;
+}   
+
+table {
+    border-radius: 16px;
+    border: 2px;
+    border-color: #e5e5e5;
+    border-style: outset;
+
+}
+
+th {
+    width: 4rem;
+}
+
+td {
+    text-align: center;
+}
+
+input[type=number] {
+    width: 90%
+}
+
+input[type=color] {
+    padding: 0%;
+    border: none;
+}
+
+.addRmv {
+    width:2rem;
+    height: 1.2rem;
+    border-radius: 0%;
+    border: none;
+    margin:0px;
+    padding:0px;
+}
+
+.padme {
+    margin-left: 5px;
+    margin-right: 5px;
+}

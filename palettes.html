@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./pal_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto&display=swap" rel="stylesheet"> 
+    <script src="draggable.js"></script>
+    <script src="pal_main.js"></script>
+    <title>pallete picker</title>
+  </head>
+  <body onload="loader()">
+    <div class="vertical-padding"></div>
+    <div class="content">
+        
+        <h1>Kron's Palette Generator</h1>
+
+        <div style="padding-left: 20%; font-size: 0px;">
+            <button class="addRmv" onclick="addRow()"> + </button>
+            <button class="addRmv" onclick="removeRow()"> - </button>
+
+        </div>
+
+        <table>
+            <tbody id="table" >
+            <tr>
+                <th>dBZ</th>
+                <th>R</th>
+                <th>G</th>
+                <th>B</th>
+                <th>A</th>
+                <th>Preview</th>
+            </tr>
+            <!-- draggable="true" ondragstart="start()" ondragover="dragover()" -->
+            </tbody>
+        </table>
+
+        <div style="display: flex; padding: 8px;">
+           
+            <!-- <button class="padme" onclick="loadPalette()">Upload .pal or .wspal</button> -->
+            <div>Upload <input type="file" id="fileUpload" accept=".pal,.wspal" oninput="handleFileUpload(this.files[0])"/></div>
+            <button class="padme" onclick="palDL()">Download .pal</button>
+            <button class="padme" onclick="wspalDL()">Download .wspal</button>
+        </div>
+    </div>
+  </body>
+</html>
