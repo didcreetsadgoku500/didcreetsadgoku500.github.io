@@ -254,7 +254,9 @@ let products = {
     "2mt2": {"Product": "2MT", "Units": "°C"},
     "srv1": {"Product": "SRV", "Units": "m/s"},
     "srv2": {"Product": "SRV", "Units": "MPH", "Scale": "2.23694"},
-    "cape1": {"Product": "CAPE", "Units": "J/kg"}
+    "cape1": {"Product": "CAPE", "Units": "J/kg"},
+    "apcp1" : {"Product": "APCP1", "Units": "mm"},
+    "apcp2" : {"Product": "APCP1", "Units": "Inches", "Scale": "0.03937"},
 }
 
 let currentProduct = "br1"
