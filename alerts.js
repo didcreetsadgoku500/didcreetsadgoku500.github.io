@@ -22,7 +22,10 @@ async function processFetch() {
         return
     }
 
-    if (latest.id == current.id) {return}
+    if (latest.id == current.id) {
+        hideAlert()    
+        return
+    }
     
     current.id = latest.id
     displayAlert(latest.properties.event, latest.properties.areaDesc)
